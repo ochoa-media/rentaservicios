@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentaServicios.com | Renta de Servicios en Estados Unidos</title>
+  <meta name="description" content="Encuentra proveedores de renta de servicios cerca de ti. Baños portátiles, dumpsters, equipos para fiestas, maquinaria y más. Cotización gratis, atención en español.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:  #EA580C;
+      --navy:    #0F172A;
+      --text:    #1E293B;
+      --muted:   #64748B;
+      --border:  #E2E8F0;
+      --bg:      #FFFFFF;
+      --bg-alt:  #F8FAFC;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-links .nav-cta {
+      background: var(--orange);
+      color: #fff;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .nav-links .nav-cta:hover { background: #C2410C; color: #fff; }
+
+    /* ── MAIN WRAPPER ── */
+    .main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 5vw, 2.75rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 1rem;
+      line-height: 1.75;
+    }
+
+    /* ── BODY SECTIONS ── */
+    .body-section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .body-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .body-section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .body-section p strong { color: var(--text); font-weight: 700; }
+
+    /* pullquote */
+    .pullquote {
+      border-left: 3px solid var(--orange);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    /* service list */
+    .service-list {
+      list-style: none;
+      margin: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .service-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.93rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .service-list li .icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .service-list li a {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .service-list li a:hover { text-decoration: underline; }
+    .service-list li .coming {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 1px 8px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* check list */
+    .check-list {
+      list-style: none;
+      margin: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .check-list li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.93rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .check-list li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-list li strong { color: var(--navy); }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .footer-logo span { color: var(--orange); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-disclaimer {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 560px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <a class="nav-logo" href="/">Renta<span>Servicios</span>.com</a>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="/privacidad.html">Privacidad</a>
+    <a class="nav-cta" href="tel:+13235551234">📞 Llamar</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="main">
+  <div class="hero">
+    <h1>Renta de Servicios<br>en Estados Unidos</h1>
+    <p>Cotización gratis. Atención en español. 7 días a la semana.</p>
+    <p>Conectamos a familias, contratistas y negocios hispanos con proveedores locales de renta de servicios en todo el país. Rápido, confiable y en su idioma.</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="body-section">
+    <h2>Encontrar un proveedor de confianza no debería ser tan difícil</h2>
+    <p><strong>Miles de familias y contratistas hispanos</strong> en Estados Unidos pierden tiempo valioso buscando proveedores confiables — llamando números que no contestan, recibiendo precios distintos cada vez, o sin saber a quién acudir.</p>
+    <p><strong>Ya sea para una quinceañera, una obra de construcción, o la limpieza de una propiedad,</strong> encontrar el servicio correcto al precio correcto no debería ser una pérdida de tiempo.</p>
+
+    <div class="pullquote">
+      "No sabía a quién llamar. Busqué en internet pero todo estaba en inglés o los precios no eran claros. Necesitaba a alguien que me entendiera y respondiera rápido."
+    </div>
+
+    <p><strong>Por eso existe RentaServicios.com</strong> — un directorio nacional de servicios de renta, diseñado para la comunidad hispana, con atención en español y cotizaciones gratuitas.</p>
+  </div>
+
+  <!-- SECTION 2 - SERVICES -->
+  <div class="body-section" id="servicios">
+    <h2>Servicios Disponibles</h2>
+    <p>Cubrimos las principales categorías de renta de servicios para hogares, eventos y construcción en todo Estados Unidos.</p>
+
+    <ul class="service-list">
+      <li>
+        <span class="icon">🚻</span>
+        <div><a href="/servicios/banos-portatiles-los-angeles.html">Renta de Baños Portátiles</a> — Para fiestas, quinceañeras, bodas, construcción y eventos al aire libre. Unidades limpias, con luz, papel y lavamanos.</div>
+      </li>
+      <li>
+        <span class="icon">🗑️</span>
+        <div><strong>Renta de Dumpsters y Contenedores</strong> <span class="coming">Próximamente</span> — Para remodelaciones, construcción, limpieza de propiedades y proyectos comerciales. Múltiples tamaños disponibles.</div>
+      </li>
+      <li>
+        <span class="icon">🪑</span>
+        <div><strong>Renta de Sillas, Mesas y Carpas</strong> <span class="coming">Próximamente</span> — Equipo completo para eventos: mesas redondas, sillas de resina, carpas y mantelería.</div>
+      </li>
+      <li>
+        <span class="icon">🎪</span>
+        <div><strong>Inflables y Brincolines</strong> <span class="coming">Próximamente</span> — Castillos, toboganes de agua y juegos inflables para fiestas infantiles y eventos familiares.</div>
+      </li>
+      <li>
+        <span class="icon">🚛</span>
+        <div><strong>Recolección de Basura y Junk Removal</strong> <span class="coming">Próximamente</span> — Retiro de muebles, escombros, limpieza de garajes y propiedades en todo el país.</div>
+      </li>
+      <li>
+        <span class="icon">🏗️</span>
+        <div><strong>Renta de Maquinaria y Herramientas</strong> <span class="coming">Próximamente</span> — Excavadoras, montacargas, minicargadores, plataformas elevadoras y herramientas para construcción.</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="body-section">
+    <h2>Cómo Funciona</h2>
+    <p>El proceso es sencillo. En minutos puede tener una cotización sin costo y sin compromiso.</p>
+
+    <ul class="check-list">
+      <li><div><strong>Elija el servicio que necesita.</strong> Seleccione la categoría que corresponde a su proyecto, evento o necesidad.</div></li>
+      <li><div><strong>Solicite su cotización gratis.</strong> Ingrese los datos básicos — tipo de servicio, código postal y fecha — o llámenos directamente.</div></li>
+      <li><div><strong>Le contactamos en minutos.</strong> Un proveedor local le llamará para confirmar disponibilidad y darle el mejor precio de su área.</div></li>
+    </ul>
+
+    <div class="pullquote">
+      "Me contactaron en menos de 10 minutos. El precio fue claro desde el principio y el servicio llegó puntual. Sin sorpresas, sin complicaciones."
+      <br><br>— Jorge R., San Antonio, TX
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="body-section">
+    <h2>¿Por Qué RentaServicios.com?</h2>
+    <p><strong>No somos una empresa de servicios.</strong> Somos un directorio nacional que conecta a la comunidad hispana con proveedores locales de renta en todo Estados Unidos.</p>
+    <p>Eso significa precios directos del proveedor, sin intermediarios que inflen los costos, y atención en su idioma desde el primer contacto.</p>
+
+    <ul class="check-list">
+      <li><div><strong>Atención 100% en español.</strong> Sin barreras de idioma, sin malentendidos, sin "hold on please."</div></li>
+      <li><div><strong>Cotización gratis, sin presión.</strong> Reciba su precio y decida con calma. Nadie le va a presionar.</div></li>
+      <li><div><strong>Proveedores locales verificados.</strong> Conocen su área, los precios del mercado y los tiempos de entrega.</div></li>
+      <li><div><strong>Servicio en todo el país.</strong> California, Texas, Florida, Nueva York, Illinois y más — donde usted esté.</div></li>
+      <li><div><strong>Disponible 7 días a la semana.</strong> De 7am a 9pm, cuando usted nos necesite.</div></li>
+    </ul>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="/">Renta<span>Servicios</span>.com</a>
+  <div class="footer-links">
+    <a href="#servicios">Servicios</a>
+    <a href="/privacidad.html">Política de Privacidad</a>
+    <a href="/terminos.html">Términos de Servicio</a>
+  </div>
+  <div class="footer-disclaimer">
+    RentaServicios.com es una plataforma de intermediación. No somos proveedores directos de servicios de renta. Los precios finales son acordados directamente entre el cliente y el proveedor. Las cotizaciones son gratuitas y sin compromiso.<br><br>
+    No discriminamos por raza, color, religión, sexo, estado civil u origen nacional.<br><br>
+    © 2025 RentaServicios.com · Todos los derechos reservados.
+  </div>
+</footer>
+
+</body>
+</html>
